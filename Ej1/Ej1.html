@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1</title>
+</head>
+<body>
+    <h1>Ej1. Programa que sirve para calcular el área de un rectángulo.</h1>
+
+
+        <label>Introduzca la base: </label><br><br>
+        <input required type="number" id="bs" name="base" placeholder=">0" min="1" ><br><br>
+        <label>Introduzca la altura:</label><br><br>
+        <input required min="1" placeholder=">0" type="number" id="al" name="altura"><br><br>
+        <button onclick="myFunction()">Enviar</button>
+        <p id="resultado"></p>
+    
+<script>
+    function myFunction() {
+        var b = document.getElementById("bs");
+        var a = document.getElementById("al");
+        // document.write(b.value);
+        // document.write(a.value);
+        var area = eval("(b*a)/2");
+        
+        document.getElementById("resultado").innerHTML="La base es: "+b.value+" La altura es: "+a.value;
+        
+        document.getElementById("resultado").innerHTML="El área del triangulo es: "+area.value;
+    }
+    
+</script>
+</body>
+</html>
