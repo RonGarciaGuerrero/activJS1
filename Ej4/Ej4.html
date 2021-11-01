@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej4</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej4. Programa que solicitará dos números e indicará si el primer número es menor, igual o mayor que el segundo número.
+        También deberá comprobar si los dos son menores de 100 y el caso contrario, indicando también “O uno de los dos números es mayor o igual a 100”.
+    </h1>
+        <label>Introduzca el primer número: </label><br><br>
+        <input required type="number" id="n1" name="num1" placeholder="" ><br><br>
+        <label>Introduzca el segundo número: </label><br><br>
+        <input required type="number" id="n2" name="num2" placeholder="" ><br><br>
+        <button onclick="myFunction()">Enviar</button>
+    
+    <script>
+        function myFunction() {
+            var numero1 = parseInt(document.getElementById("n1").value);
+            var numero2 = parseInt(document.getElementById("n2").value);
+            
+            if (numero1==numero2){
+                if(numero1<100){
+                    alert('Los números son iguales, además son menores a 100');
+                }else{
+                    alert('Los números son iguales, además son mayores o iguales a 100');
+                }    
+            }
+            if (numero1>numero2){
+                if(numero1<100 && numero2<100){
+                    alert('El primer número es mayor, además los dos números son menores a 100');
+                }
+                if(numero1>=100 && numero2>=100){
+                    alert('El primer número es mayor, además los dos números son mayores o iguales a 100');
+                }
+                if(numero1>=100 && numero2<100){
+                    alert('El primer número es mayor, además el primer número es mayor o igual a 100 pero el segundo no');
+                }
+                if(numero1<100 && numero2>=100){
+                    alert('El primer número es mayor, además el primer número es menor a 100 pero el segundo no');
+                }
+            }else{
+                if(numero1<100 && numero2<100){
+                    alert('El primer número es menor, además los dos números son menores a 100');
+                }
+                if(numero1>=100 && numero2>=100){
+                    alert('El primer número es menor, además los dos números son mayores o iguales a 100');
+                }
+                if(numero1>=100 && numero2<100){
+                    alert('El primer número es menor, además el primer número es mayor o iguale a 100 pero el segundo no');
+                }
+                if(numero1<100 && numero2>=100){
+                    alert('El primer número es menor, además el primer número es menor a 100 pero el segundo no');
+                }
+            }
+            
+        }    
+    </script>
+    
+</body>
+</html>

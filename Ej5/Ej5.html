@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej5</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej5. Realizar una pequeña aplicación en JavaScript que muestre lo siguiente:</h1>
+        <p>Tabla de multiplicar del 7.<br/>
+            Tabla de multiplicar del 8.<br/>
+            Tabla de multiplicar del 9.<br/>
+            Utilizar los tres tipos de bucles que hay en JavaScript (para cada número un tipo de bucle diferente).
+        </p>
+    
+    
+    <table id="tabla7">Tabla del 7 con bucle for</table>
+    <script>
+        var tab7=document.getElementById('tabla7');
+        for(var i=0; i<=10;i++){
+            tab7.innerHTML=tab7.innerHTML+'<tr><td>'+i+'*7='+'</td><td>'+ (i*7)+'</tr></td>';
+        }
+    </script>
+    <table id="tabla8">Tabla del 8 con bucle while</table>
+    <script>
+        var tab8=document.getElementById('tabla8');
+        var i=0;
+        while(i<=10){
+            tab8.innerHTML=tab8.innerHTML+'<tr><td>'+i+'*8='+'</td><td>'+ (i*8)+'</tr></td>';
+            i++;
+        }
+    </script>
+    <table id="tabla9">Tabla del 9 con bucle do while</table>
+    <script>
+        var tab9=document.getElementById('tabla9');
+        var i=0;
+        do{
+            tab9.innerHTML=tab9.innerHTML+'<tr><td>'+i+'*9='+'</td><td>'+ (i*9)+'</tr></td>';
+            i++;
+        }while(i<=10)
+    </script>
+</body>
+</html>

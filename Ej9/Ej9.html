@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej5</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej9. Realizar un programa que solicitará un texto y dirá si lo que se ha introducido es un palíndromo (en caso de una cadena de caracteres) o un número capicúa (en caso de un entero). Ejemplo: “Reconocer” o 1234554321</h1>
+    <label>Introduzca un número </label><br><br>
+    <input required type="text" id="text" name="texto"><br><br>
+    <button onclick="myFunction()">Enviar</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function myFunction() {
+            var texto = document.getElementById("text").value;
+            var iguales=true;
+
+            for (var i = 0; i < Math.floor(texto.length/2); i++){//comparo hasta la mitad, si es impar se redondea
+                console.log(i);
+                if (texto.substr(i,1) != texto.substr(texto.length-1-i,1)){//voy comparando el primero y el ultimo, el segundo y penultimo y asi voy...
+                    console.log("diferentes");
+                    iguales=false;
+                    break;
+                }
+            }
+            if(iguales){
+                document.getElementById("resultado").innerHTML=texto+" Es capicúa.";
+            }else{
+                document.getElementById("resultado").innerHTML=texto+" No es capicúa";
+            }
+        }
+    </script>
+</body>
+</html>

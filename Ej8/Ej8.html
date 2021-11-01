@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej8</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej8. Realiza un programa que solicitará un número y dirá si ese número es primo o no.</h1>
+    <label>Introduzca un número </label><br><br>
+    <input required type="number" id="num" name="numero" min="1"><br><br>
+    <button onclick="myFunction()">Enviar</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function myFunction() {
+            var n = parseInt(document.getElementById("num").value);//el value devuelve una cadena
+            var mitad,raiz,d,divisores;
+            if (n ==1){
+                document.getElementById("resultado").innerHTML=n+" no es primo";
+            }else{
+                mitad=Math.floor(n/2);
+                raiz= Math.floor(Math.sqrt(n));
+                if (raiz<2){
+                    raiz=2;
+                }
+                divisores=0;
+                d=mitad;
+                while (d >= raiz ){
+                    if (n % d == 0) {
+                        divisores=divisores+1;
+                        console.log(d);	//para depurar
+                        break;//si se ha encontrado un divisor entonces salimos del ciclo
+                    }
+                    d=d-1;
+                }
+                if (divisores==0) {
+                    document.getElementById("resultado").innerHTML=n+ " es primo";
+                }else{ 
+                    document.getElementById("resultado").innerHTML=n+" no es primo";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

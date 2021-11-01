@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej3</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej3. Programa que solicitará un número al usuario y, primero, dirá (mediante alert) si el número introducido es igual a 100, es igual a 200 o si no es ninguno de los dos anteriores. Además, indicará si es un número positivo o negativo</h1>
+        <label>Introduzca un número: </label><br><br>
+        <input required type="number" id="n" name="num" placeholder="" ><br><br>
+        <button onclick="myFunction()">Enviar</button>
+    
+    <script>
+        function myFunction() {
+            var numero = document.getElementById("n").value;
+            
+            
+            if(numero==100){
+                alert('El número es igual a 100 y es positivo');
+            }
+            if(numero==200){
+                alert('El número es igual a 200 y es positivo');
+            }else{
+                if(numero<0){
+                    alert('El número no es igual a 100 ni a 200 y es negativo');
+                }else{
+                    alert('El número no es igual a 100 ni a 200 y es positivo');
+                }   
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

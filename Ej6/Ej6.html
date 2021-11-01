@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej6</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej6. Programa que solicitará tu nombre y apellidos y posteriormente el número de veces a repetirlo. Después, mostrará el nombre esas N veces indicadas.</h1>
+    <label>Introduzca su Nombre y Apellidos </label><br><br>
+    <input required type="text" id="nom" name="nombre"><br><br>
+    <label>Número de veces a repetirlo:</label><br><br>
+    <input required min="1" placeholder=">0" type="number" id="veces" name="veces"><br><br>
+    <button onclick="myFunction()">Enviar</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function myFunction() {
+            var n = document.getElementById("nom").value;//el value devuelve una cadena
+            var v = parseInt(document.getElementById("veces").value);
+            var i=1;
+            while(i<=v){
+                document.getElementById("resultado").innerHTML=document.getElementById("resultado").innerHTML+n+'<br/>';
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>
