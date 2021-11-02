@@ -14,7 +14,7 @@
         <label>Introduzca la base: </label><br><br>
         <input required type="number" id="bs" name="base" placeholder=">0" min="0.01" step="0.01" ><br><br>
         <label>Introduzca la altura:</label><br><br>
-        <input required min="1" placeholder=">0" type="number" id="al" name="altura" min="0.01" step="0.01"><br><br>
+        <input required placeholder=">0" type="number" id="al" name="altura" min="0.01" step="0.01"><br><br>
         <button onclick="myFunction()">Enviar</button>
         <p id="resultado"></p>
     
@@ -22,8 +22,7 @@
     function myFunction() {
         var b = parseFloat(document.getElementById("bs").value);//el value devuelve una cadena, el .value se usa para extraer el valor de un objeto Dom html
         var a = parseFloat(document.getElementById("al").value);
-        // document.write(b.value);
-        // document.write(a.value);
+
         var area = a * b / 2.0;//este valor es de tipo float
         
         document.getElementById("resultado").innerHTML="La base es: "+b+" La altura es: "+a+"<br/>"+"El área del triangulo es: "+area;//como area es un float no hace falta pponerle un .value, ya es un float

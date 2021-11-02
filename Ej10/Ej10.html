@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej10</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
+</head>
+<body>
+    <h1>Ej10. Realiza un juego en el que permita adivinar un número aleatorio en un número de intentos introducido por pantalla. </h1>
+    <p>
+        El flujo del software es el siguiente: <br/>
+        El usuario introduce por cuadro de diálogo el límite de intentos para poder ganar. <br/>
+        El usuario introducirá un número y el programa mostrará por cuadro de diálogo si el número introducido es mayor o menor al que haya que adivinar. <br/>
+        Este proceso se repetirá hasta que el usuario gane o se sobrepase el límite de intentos. <br/>
+   </p>
+     
+   <h2>Juego de adivinar el número</h2>
+
+    <label>Introduzca el número máximo de intentos:</label><br><br>
+    <input required type="number" id="intent" name="intent"><br><br>
+    <label>Introduzca cuántos digitos tiene el número a adivinar:</label><br><br>
+    <input required type="number" id="digit" name="digit" min="1"><br><br>
+    <button onclick="myFunction()">Enviar</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function myFunction() {
+            var intentos = parseInt(document.getElementById("intent").value);//getElementById devuelve un objeto DOM, se le pide el value devuelve una cadena
+            var digitos = parseInt(document.getElementById("digit").value);
+            var iMax = (Math.pow(10,digitos)-1);  
+            var iNumAleatorio = Math.floor((Math.random() * (iMax)) + 1);//SIN CONTAR EL 0
+            var iguales=true;
+            console.log(intentos);
+            console.log(digitos);
+            console.log(iMax);
+            console.log(iNumAleatorio);
+
+        //     for (var i = 0; i < Math.floor(texto.length/2); i++){//comparo hasta la mitad, si es impar se redondea
+        //         console.log(i);
+        //         if (texto.substr(i,1) != texto.substr(texto.length-1-i,1)){//voy comparando el primero y el ultimo, el segundo y penultimo y asi voy...
+        //             console.log("diferentes");
+        //             iguales=false;
+        //             break;
+        //         }
+        //     }
+        //     if(iguales){
+        //         document.getElementById("resultado").innerHTML=texto+" Es capicúa.";
+        //     }else{
+        //         document.getElementById("resultado").innerHTML=texto+" No es capicúa";
+        //     }
+        }
+    </script>
+</body>
+</html>
+<!-- var iMax = prompt("Introduce el número máximo del rango");
+// var iNumAleatorio=Math.floor((Math.random() * (iMax)) + 1);//SIN CONTAR EL 0 -->
