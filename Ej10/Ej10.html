@@ -5,54 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ej10</title>
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Autor: Ronald Garcia Guerrero -->
 </head>
 <body>
     <h1>Ej10. Realiza un juego en el que permita adivinar un número aleatorio en un número de intentos introducido por pantalla. </h1>
-    <p>
-        El flujo del software es el siguiente: <br/>
+    
+    <img class="imagen" src="./img/pexels-joshua-miranda-4027658.jpg" alt="normas" width="200em"></div>
+    <p class="normas">
+        
+        <u>El flujo del software es el siguiente: </u><br/>
         El usuario introduce por cuadro de diálogo el límite de intentos para poder ganar. <br/>
         El usuario introducirá un número y el programa mostrará por cuadro de diálogo si el número introducido es mayor o menor al que haya que adivinar. <br/>
         Este proceso se repetirá hasta que el usuario gane o se sobrepase el límite de intentos. <br/>
    </p>
-     
-   <h2>Juego de adivinar el número</h2>
+   <div class="juego">
+        <h2>Juego de adivinar el número</h2>
 
-    <label>Introduzca el número máximo de intentos:</label><br><br>
-    <input required type="number" id="intent" name="intent"><br><br>
-    <label>Introduzca cuántos digitos tiene el número a adivinar:</label><br><br>
-    <input required type="number" id="digit" name="digit" min="1"><br><br>
-    <button onclick="myFunction()">Enviar</button>
-    <p id="resultado"></p>
-    
-    <script>
-        function myFunction() {
-            var intentos = parseInt(document.getElementById("intent").value);//getElementById devuelve un objeto DOM, se le pide el value devuelve una cadena
-            var digitos = parseInt(document.getElementById("digit").value);
-            var iMax = (Math.pow(10,digitos)-1);  
-            var iNumAleatorio = Math.floor((Math.random() * (iMax)) + 1);//SIN CONTAR EL 0
-            var iguales=true;
-            console.log(intentos);
-            console.log(digitos);
-            console.log(iMax);
-            console.log(iNumAleatorio);
-
-        //     for (var i = 0; i < Math.floor(texto.length/2); i++){//comparo hasta la mitad, si es impar se redondea
-        //         console.log(i);
-        //         if (texto.substr(i,1) != texto.substr(texto.length-1-i,1)){//voy comparando el primero y el ultimo, el segundo y penultimo y asi voy...
-        //             console.log("diferentes");
-        //             iguales=false;
-        //             break;
-        //         }
-        //     }
-        //     if(iguales){
-        //         document.getElementById("resultado").innerHTML=texto+" Es capicúa.";
-        //     }else{
-        //         document.getElementById("resultado").innerHTML=texto+" No es capicúa";
-        //     }
-        }
-    </script>
+        <label>Introduzca el número máximo de intentos:</label><br><br>
+        <input required type="number" id="intent" name="intent" min="1"><br><br>
+        <label>Introduzca cuántos digitos tiene el número a adivinar:</label><br><br>
+        <input required type="number" id="digit" name="digit" min="1"><br><br>
+        <button onclick="myFunction()">Iniciar Juego</button>
+        <p id="resultado"></p>
+        
+        <script>
+            function myFunction() {
+                var intentos = parseInt(document.getElementById("intent").value);//getElementById devuelve un objeto DOM, se le pide el value devuelve una cadena
+                var copiaIntentos=intentos;//me copio este valor para mas adelante usarlo si fuese necesario
+                var digitos = parseInt(document.getElementById("digit").value);
+                var iMax = (Math.pow(10,digitos)-1);  
+                var iNumAleatorio = (Math.floor((Math.random() * (iMax)) + 1)).toString();//lo convierto en cadena para comparar cadenas en lugar de números
+                var iguales=true;
+                console.log(intentos);
+                console.log(digitos);
+                console.log(iMax);
+                console.log(iNumAleatorio);
+                //esto era solo para visualizar los valores de las variables
+                while(intentos>0 && iNumAleatorio!=adivina){//con un ciclo while pregunto antes de ejecutar
+                    var adivina = prompt("Introduzca un número del 1 al "+iMax+" \nO si prefiere salir escriba \"salir\" ");
+                    if(adivina.toLowerCase() == "salir"){
+                        alert("GAME OVER.\nEl número a adivinar era: "+iNumAleatorio);
+                        break;
+                    }
+                    if (iNumAleatorio!=adivina){
+                        intentos--;
+                        alert("Valor incorrecto, te quedan "+intentos+" oportunidades");
+                        if(intentos==0){
+                            alert("GAME OVER.\nEl número a adivinar era: "+iNumAleatorio);
+                            //break;
+                        }
+                    }else{
+                        intentos--;
+                        alert("Enhorabuena, has adivinado el número correcto en "+(copiaIntentos-intentos)+" oportunidades");//resto la cantidad de intentos iniciales con los intentos actuales y me da las oportunidades usadas
+                        //break;
+                    }
+                }
+            }
+        </script>
+   </div>  
+   
 </body>
 </html>
-<!-- var iMax = prompt("Introduce el número máximo del rango");
-// var iNumAleatorio=Math.floor((Math.random() * (iMax)) + 1);//SIN CONTAR EL 0 -->
