@@ -50,7 +50,14 @@
                     }
                     if (iNumAleatorio!=adivina){
                         intentos--;
-                        alert("Valor incorrecto, te quedan "+intentos+" oportunidades");
+                        if(adivina<iNumAleatorio){
+                            alert("Valor incorrecto \n Ha introducido un número menor, te quedan "+intentos+" oportunidades");
+                        
+                        }else{
+                            alert("Valor incorrecto \n Ha introducido un número mayor, te quedan "+intentos+" oportunidades");
+                        
+                        }
+                        
                         if(intentos==0){
                             alert("GAME OVER.\nEl número a adivinar era: "+iNumAleatorio);
                             //break;
